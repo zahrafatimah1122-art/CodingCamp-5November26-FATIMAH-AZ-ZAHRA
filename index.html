@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List Life Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <button id="theme-toggle" class="theme-toggle" aria-label="Ganti tema">🌙</button>
+
+  <main class="container">
+    <!-- Greeting -->
+    <section class="card greeting" id="greeting-card">
+      <div id="clock" class="clock">00:00:00</div>
+      <div id="date" class="date"></div>
+      <h1 id="greeting-text" class="greeting-text">Good Morning</h1>
+      <div class="name-row">
+        <input type="text" id="name-input" placeholder="Nama kamu..." maxlength="30">
+        <button id="save-name" class="btn primary small">Simpan</button>
+      </div>
+    </section>
+
+    <div class="grid">
+      <!-- Focus Timer -->
+      <section class="card timer-card">
+        <h2>Focus Timer</h2>
+        <div id="timer-display" class="timer-display">25:00</div>
+        <div class="btn-row">
+          <button id="start-btn" class="btn primary">Start</button>
+          <button id="stop-btn" class="btn">Stop</button>
+          <button id="reset-btn" class="btn">Reset</button>
+        </div>
+        <div class="duration-row">
+          <label for="duration-input">Durasi (menit)</label>
+          <input type="number" id="duration-input" min="1" max="180" value="25">
+          <button id="set-duration" class="btn small">Set</button>
+        </div>
+      </section>
+
+      <!-- To-Do List -->
+      <section class="card tasks-card">
+        <h2>Tasks</h2>
+        <form id="task-form" class="row">
+          <input type="text" id="task-input" placeholder="Add a new task..." maxlength="100" required>
+          <button type="submit" class="btn primary">Add</button>
+        </form>
+        <ul id="task-list" class="task-list"></ul>
+        <p id="task-empty" class="empty">Belum ada tugas.</p>
+      </section>
+
+      <!-- Quick Links -->
+      <section class="card links-card">
+        <h2>Quick Links</h2>
+        <form id="link-form" class="row">
+          <input type="text" id="link-name" placeholder="Link name" maxlength="20" required>
+          <input type="text" id="link-url" placeholder="URL" required>
+          <button type="submit" class="btn primary">Add Link</button>
+        </form>
+        <div id="link-list" class="link-list"></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
